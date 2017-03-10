@@ -40,5 +40,8 @@ RUN set -ex; \
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
+# enable mod rewrite for permalinks to work
+RUN a2enmod rewrite
+
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]
